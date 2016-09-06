@@ -11,7 +11,7 @@ A Docker image setup for a [Crossbar.io](http://crossbar.io/) node running in
 
 The image can be built with the next command:
 
-```bash
+```Shell
 docker build -t $DOCKERHUB_USER/$IMAGE_NAME:$VERSION .
 ```
 
@@ -19,24 +19,24 @@ docker build -t $DOCKERHUB_USER/$IMAGE_NAME:$VERSION .
 
 Once your image is created, you can create a container from it:
 
-```bash
+```Shell
 docker run -t -p 8001:8001 --name crossbar-bridge $DOCKERHUB_USER/$IMAGE_VERSION:$VERSION
 ```
 
 Or you might prefer to run it in daemon mode, without showing any logging output:
 
-```bash
+```Shell
 docker run -d -p 8001:8001 --name crossbar-bridge $DOCKERHUB_USER/$IMAGE_VERSION:$VERSION
 ```
 
 Once you are done playing with the node, you can stop it:
 
-```bash
+```Shell
 docker stop crossbar-bridge
 ```
 
 And next time you want to use it, you just need to trigger this command:
 
-```bash
+```Shell
 docker start crossbar-bridge
 ```
