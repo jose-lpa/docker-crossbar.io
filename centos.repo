@@ -1,0 +1,5 @@
+[crossbar]
+name = Crossbar
+baseurl = http://package.crossbar.io/centos/7/
+enabled = 1
+gpgcheck = 1
