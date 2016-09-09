@@ -17,6 +17,7 @@ RUN yum install -y crossbar
 RUN mkdir -p /node/{web,.crossbar}/
 COPY ./crossbar/config.json /node/.crossbar
 COPY ./www/index.html /node/web
+ADD ./crossbar/session /node/.crossbar/session
 
 RUN ln -s /opt/crossbar/bin/crossbar /usr/bin/crossbar
 

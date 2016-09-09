@@ -20,10 +20,6 @@
                                         "publish": true,
                                         "subscribe": true
                                     },
-                                    "disclose": {
-                                        "caller": false,
-                                        "publisher": false
-                                    },
                                     "cache": true
                                 }
                             ]
@@ -63,13 +59,45 @@
                                 "secret": "secret",
                                 "post_body_limit": 8192,
                                 "timestamp_delta_limit": 10,
-                                "require_ip": [
-                                    "192.168.1.1/255.255.255.0",
-                                    "127.0.0.1"
-                                ],
                                 "require_tls": false
                             }
+                        },
+                        "call": {
+                            "type": "caller",
+                            "realm": "realm1",
+                            "role": "anonymous"
+                        },
+                        "call-signature": {
+                            "type": "caller",
+                            "realm": "realm1",
+                            "role": "anonymous",
+                            "options": {
+                                "key": "key",
+                                "secret": "secret"
+                            }
                         }
+                    }
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "options": {
+                "pythonpath": ["session"]
+            },
+            "components": [
+                {
+                    "type": "class",
+                    "classname": "test_session.TestSession",
+                    "realm": "realm1",
+                    "transport": {
+                        "type": "websocket",
+                        "endpoint": {
+                            "type": "tcp",
+                            "host": "localhost",
+                            "port": 8001
+                        },
+                        "url": "ws://localhost:8001/ws"
                     }
                 }
             ]
