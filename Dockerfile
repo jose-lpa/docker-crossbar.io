@@ -1,4 +1,4 @@
-FROM centos:7
+FROM python:3
 
 MAINTAINER José Luis Patiño Andrés <jose.lpa@gmail.com>
 
@@ -6,20 +6,14 @@ ENV PYTHONUNBUFFERED 1
 
 EXPOSE 8001
 
-# Install GPG key and repository.
-RUN rpm --import "http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x5FC6281FD58C6920"
-COPY ./centos.repo /etc/yum.repos.d/crossbar.repo
-
-# Install Crossbar.io package.
-RUN yum install -y crossbar
+RUN pip install crossbar
 
 # Custom node configuration.
-RUN mkdir -p /node/{web,.crossbar}/
+RUN mkdir -p /node/web
+RUN mkdir -p /node/.crossbar/session/
 COPY ./crossbar/config.json /node/.crossbar
 COPY ./www/index.html /node/web
-ADD ./crossbar/session /node/.crossbar/session
-
-RUN ln -s /opt/crossbar/bin/crossbar /usr/bin/crossbar
+COPY ./crossbar/session/ /node/.crossbar/session
 
 # Create a system user.
 RUN useradd -d /node -r crossbar
