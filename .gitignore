@@ -1,0 +1,6 @@
+.ropeproject/
+*.pyc
+*.swp
+
+crossbar/key.priv
+crossbar/key.pub
