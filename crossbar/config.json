@@ -55,7 +55,7 @@
                             "realm": "realm1",
                             "role": "anonymous",
                             "options": {
-                                "key": "foobar",
+                                "key": "key",
                                 "secret": "secret",
                                 "post_body_limit": 8192,
                                 "timestamp_delta_limit": 10,
