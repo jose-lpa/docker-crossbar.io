@@ -3,6 +3,8 @@
 A Docker image setup for a [Crossbar.io](http://crossbar.io/) node running in
 [HTTP Bridge mode](http://crossbar.io/docs/HTTP-Bridge-Publisher/).
 
+[![Docker image layers](https://images.microbadger.com/badges/image/joselpa/crossbar-http-bridge.svg)](https://microbadger.com/images/joselpa/crossbar-http-bridge "Get your own image badge on microbadger.com")
+[![Docker image version](https://images.microbadger.com/badges/version/joselpa/crossbar-http-bridge.svg)](https://hub.docker.com/r/joselpa/crossbar-http-bridge/)
 [![License](http://img.shields.io/:license-gpl3-blue.svg?style=flat-square)](http://www.gnu.org/licenses/gpl-3.0.html)
 
 ## Usage
